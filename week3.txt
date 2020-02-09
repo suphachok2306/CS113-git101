@@ -1,0 +1,54 @@
+week3----Control Flow
+
+1. Statements and Blocks
+    expression ต้องมีเครื่องหมาย semi-colon (;) ต่อท้าย
+    เครื่องหมายปีกกา {} ใช้รวมส่วนของ declarations และ statements เข้าด้วยกันเป็น block
+    Null statement คือไม่มีส่วนของ expression มีเเค่ semi-colon (;)
+
+2. If-Else
+   if (expression)
+      statement1
+   else 
+      statement2
+
+3. Else-If
+   if (expression1)
+      statement1
+   else if (expression2)
+      statement2
+   else if (expression3)
+      statement3
+   else if (expression4)
+      statement4
+   else
+      statement5
+
+4. Switch
+        switch ใช้ในการตรวจสอบเงื่อนไขในลักษณะที่ดูว่าค่าของ expression นั้น match เข้ากับค่าคงที่ (ที่เป็นตัวเลขจำนวนเต็ม) ตัวใด 
+   หลังจากนั้นโปรแกรมจะกระโดดมาทำงาน statement ภายใต้ค่าคงที่นั้นลงมาเรื่อยๆ จนกว่าจะเจอ break แล้วจึงหลุดออกจาก switch
+        
+        default เป็น optional คือจะมีหรือไม่มีก็ได้ แต่ถ้ามีแล้ว คำสั่ง statements ที่อยู่ภายใต้ default 
+    จะถูกทำงานเมื่อค่าของ expression ไม่ match กับ case ใดเลย
+
+5. Loops - While และ For
+    -รูปแบบของ while
+         while (expression) 
+            statement
+    -รูปแบบของ for
+         for (expr1; expr2; expr3)
+            statement
+
+6. Loops - Do-While
+    do-while จะแตกต่างจาก while และ for ในแง่ที่การทดสอบเงื่อนไขจะอยู่ด้านล่างของลูป
+    
+    ex.
+        do {
+           statement
+        } while (expression);
+
+        statement จะถูกทำงาน แล้ว expression จึงถูกหาค่าว่าเป็นจริงหรือเท็จ ซึ่งถ้ามีค่าเป็นจริง statement จะถูกทำงานอีก 
+    แล้ว expression จึงถูกหาค่าอีก ซึ่งลูปนี้จะวนทำซ้ำไปเรื่อยๆจนกว่า expression จะเป็นเท็จ
+
+7. Break และ Continue
+    -break จะทำให้โปรแกรมหลุดออกมาจากลูป 
+    -continue จะบังคับการทำงานของลูปให้เกิดการวนซ้ำขึ้นมาใหม่

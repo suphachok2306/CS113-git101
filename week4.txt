@@ -1,0 +1,63 @@
+week4----Functions and Program Structure 
+
+1. Function Definition (การนิยามฟังก์ชัน)
+    -รูปแบบของการนิยามฟังก์ชัน
+    return-value-type function-name (parameter-list)
+    {
+       declarations
+   
+       statement
+       statement
+       :
+    }
+    -ต้องมี Function header กับ Function body
+    -C compiler เป็น One-pass compiler
+
+2. Function Prototypes
+    -รูปแบบของฟังก์ชัน prototype
+    return-value-type function-name (parameter-list);
+
+3.Standard Library Functions and Math Library Functions
+    -ฟังก์ชัน printf, scanf และ getchar อยู่ใน standard library functions
+    -ฟังก์ชัน sqrt, exp และ log อยู่ใน math library functions
+    ถ้าเราต้องการใช้ฟังก์ชันใน math library เราควรต้อง #include <math.h>
+
+4. Return Values
+    -ฟังก์ชันจะต้องส่งค่ากลับ หรือไม่ก็ส่งกลับในรูปของ void
+    -เราใช้ void เพื่อบอกคอมไพเลอร์ว่าฟังก์ชันนี้ไม่มีการส่งค่าใดๆ กลับไปยังผู้เรียก
+
+5. Using Functions as Parameters to Functions
+    ค่าที่ได้จากการเรียกใช้ฟังก์ชันสามารถส่งผ่านไปเป็นพารามิเตอร์ของอีกฟังก์ชันได้
+
+6. Recursion (การเรียกซ้ำ)
+    ฟังก์ชันสามารถเรียกใช้ตนเองได้ ซึ่งเรียกว่า recursion
+     ****เมื่อฟังก์ชันเรียกตนเอง การเรียกจะสำเนาฟังก์ชัน (เช่น ตัวแปร local) ขึ้นมาอีกชุด โดยเป็นอิสระจากการถูกเรียกในครั้งแรก****
+
+7. Scope Rules (ขอบเขตและช่วงชีวิตของตัวแปร)
+    ในบางบริเวณของโปรแกรม ตัวแปรที่ถูกกำหนดขึ้นอาจถูกเข้าถึงได้ และเมื่อออกนอกบริเวณดังกล่าว ตัวแปรนั้นอาจไม่สามารถถูกเข้าถึงได้
+
+7.1 Local Variables 
+    ตัวแปรที่ถูกประกาศไว้อยู่ภายในตัวฟังก์ชัน ซึ่งสามารถถูกใช้งานได้เพียงภายในฟังก์ชันที่ถูกประกาศไว้
+
+7.2 Global Variables 
+    -ตัวแปรที่ถูกประกาศไว้นอกฟังก์ชันเป็นตัวแปร global ซึ่งสามารถถูกเข้าถึงได้จากฟังก์ชันต่างๆ รวมถึงฟังก์ชัน main ได้
+    -หากตัวแปร local มีชื่อซ้ำกับตัวแปร global แล้ว การแก้ไขค่าในตัวแปร local จะไม่ได้มีผลกระทบกับค่าของตัวแปร global
+
+ 7.3 Storage Classes 
+    ผู้ใช้สามารถกำหนด storage class ให้กับตัวแปร ใน 4 ลักษณะ ผ่านการใช้ keyword auto, register, extern, และ static
+เพื่อช่วยกำหนดช่วงชีวิตในการเก็บข้อมูลของตัวแปรใน memory
+    
+    -automatic storage duration
+         auto และ register ใช้กำหนดตัวแปรที่เป็น automatic storage duration
+    -static storage duration
+         extern และ static ใช้กำหนดตัวแปรที่เป็น static storage duration 
+
+7.4 Dynamic Storage Duration
+    พื้นที่เก็บข้อมูล (ตัวแปร?) สำหรับ dynamic storage duration สามารถถูก allocate ขึ้นมาได้ตามความต้องการของโปรแกรมขณะที่โปรแกรมกำลังทำงานอยู่
+
+8. Random Number Generator
+    -rand () เป็นฟังก์ชันใน C standard library ที่ใช้ในการสร้างเลขสุ่มที่เป็นจำนวนเต็มที่อยู่ระหว่าง 0 และ RAND_MAX  ซึ่ง RAND_MAX 
+เป็นค่าคงที่ที่ถูกกำหนดไว้ให้แล้วใน <stdlib.h>
+    -ในโปรแกรม เวลามีการเรียกใช้ rand () หลายๆ ครั้ง ค่าที่ฟังก์ชันนี้ส่งกลับมาจะได้ตัวเลขจำนวนเต็มที่แตกต่างกันออกไป
+    -โดยปกติแล้ว ในการรันโปรแกรมในแต่ละครั้ง ชุดเลขสุ่มที่โปรแกรมได้รับจากฟังก์ชันจะเป็นชุดเลขสุ่มที่เหมือนกัน แต่ถ้าหากเราต้องการชุดเลขสุ่มที่แตกต่างกันออกไป 
+เราจำเป็นต้องเรียก srand() หนึ่งครั้งเพื่อกำหนดค่า seed ให้กับ random number generator ก่อนที่เราจะเรียกใช้ rand() ต่อไป

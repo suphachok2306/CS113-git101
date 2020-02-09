@@ -1,0 +1,60 @@
+week2----Types, Operators, and Expressions 
+
+1.ชื่อตัวแปร (Variable Names)
+    ต้องให้อ่านแล้วเข้าใจได้ง่าย เเล้วยังใช้หลักการนี้ตั้งชื่อฟังก์ชันได้ด้วย
+
+2.ประเภทข้อมูลและขนาด (Data Types and Sizes)
+    char, int, float, double
+    short int, long int
+    signed char, unsigned char
+    sizeof ใช้สำหรับตรวจสอบขนาดข้อมูล
+
+3.ค่าคงที่ (Constants)
+    เช่น -an integer constant, ต.ย. 1234
+        -floating-point constants เช่น 123.4 หรือ 1e-2
+
+4.การประกาศ (Declarations)
+    ตัวแปรต้องถูกประกาศก่อนว่าเป็นตัวแปรปรระเภทไหน(ภาษา C)
+    const สามารถใช้กับตัวแปรอาเรย์เพื่อไม่ให้ข้อมูลภายในอาเรย์เปลี่ยนแปลง  ****int strlen(const char[]);****
+4.1 printf() and puts()
+     %d = print as decimal integer 
+     %f = print as floating point 
+     %o = for octal
+     %x = for hexadecimal
+     %c = for character 
+     %s = for character string
+     %% = for itself
+4.2 Character Input and Output
+     getchar() ใช้รับอักขระ 1 ตัวจาก stdin เข้ามาในโปรแกรม
+     putchar() ใช้ส่งอักขระ 1 ตัวออกไปยัง stdout
+     EOF (end-of-file)  ฟังก์ชัน getchar() จะส่งค่ากลับเป็น EOF เมื่ออักขระที่ถูกส่งเข้ามาหมดแล้ว
+
+5. Arithmetic Operators
+    มี +, -, *, /, %
+
+6. Relational Operators และ Logical Operators
+    -Relational Operators
+    จะเป็น >, >=, <, <= , ==, !=
+    -Logical Operators
+    จะเป็น &&, || !
+
+7. Type Conversion
+    if (!valid) แทนการเขียน if (valid == 0)
+
+8. Increment and Decrement Operators
+    n++ กับ ++n เหมือนกับ n=n+1 
+
+9. Bitwise Operators
+    &     AND
+    |     inclusive OR
+    ^     exclusive OR
+    <<    left shift
+    >>    right shift
+    ~     one's complement (unary)
+
+10. Assignment Operators
+    ex. c = getchar() และ c = d = getchar() สามารถเขียนได้
+
+11. Conditional Expression
+    เป็นการย่อการใช้งานของ if 
+          expr1 ? expr2 : expr3

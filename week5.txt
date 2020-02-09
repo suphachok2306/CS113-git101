@@ -1,0 +1,17 @@
+week5----Functions and Program Structure (ต่อ)
+1. Function Call และ Stack Frames 
+        โดยทั่วไป ฟังก์ชันมีขั้นตอนวิธีการจัดเก็บ ตัวแปรพารามิเตอร์ที่รับข้อมูลเข้ามา, ตัวแปร local, และบางกรณียังมีตัวแปรที่ไว้ถูกใช้งานโดยชั่วคราว
+บริเวณที่เก็บตัวแปรเหล่าเรียกว่า stack frame
+
+2. การสร้าง Static Library
+     gcc -c func.c 
+
+3. การสร้าง Shared (Dynamic) Library
+    -สำหรับ Windows
+    gcc -shared -o libfunc.dll -Wl,--out-implib,libfunc.dll.a *.o
+
+4. การเรียกใช้ฟังก์ชันใน Shared Library ของภาษา C จาก Python
+
+     from ctypes import cdll
+     c_lib = cdll.LoadLibrary("libfunc.dll")
+     c_lib.c_function(123)
